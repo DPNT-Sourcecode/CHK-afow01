@@ -49,9 +49,12 @@ def test_EEEB():
 
 
 def test_ABCDEABCDE():
-    num = checkout("ABCDEABCDE")
+    num = checkout("AABBCCDDEE")
     expected = 280
+    interpreted = 50 + 50 + 30 + 20 + 20 + 15 + 15 + 80
+    assert interpreted == expected
     assert num == expected
+
 
 
 
