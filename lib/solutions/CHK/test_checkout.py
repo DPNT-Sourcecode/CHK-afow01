@@ -31,8 +31,8 @@ def test_checkout_with_E():
 
 
 def test_E_offer():
-    num = checkout("AABADEEEEE")
-    expected = 130 + 30 + 15 + 120
+    num = checkout("AABADEE")
+    expected = 130 + 15 + 80
     assert num == expected
 
 
@@ -44,9 +44,5 @@ def test_As():
 
 def test_EEEB():
     num = checkout("EEEB")
-    expected = 120  # 40 + 40 + 30 = 110
+    expected = 120
     assert num == expected
-
-
-
-
