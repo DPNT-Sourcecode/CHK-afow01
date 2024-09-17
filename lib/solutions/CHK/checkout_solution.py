@@ -39,11 +39,18 @@ def checkout(skus):
         if number > 0:
             total += number * rrp
 
+    if to_deduct:
+        for deductions in Counter(list(to_deduct)).items():
+            deduct_sku, deduct_num = deductions
+            existing = skus.get(deduct_sku)
+            if existing:
+                if existing < deduct_num:
+                    deduct_num = existing
 
-    for deductions in Counter(list(to_deduct)).items():
-        skus = 
+                total -= deduct_num * prices[deduct_sku]
 
     return total
+
 
 
 
