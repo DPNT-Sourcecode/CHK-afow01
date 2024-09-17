@@ -24,4 +24,13 @@ def test_illegal():
     assert num == -1
 
 
+def test_checkout_with_E():
+    num = checkout("AABCDE")
+    expected = 50 + 50 + 30 + 20 + 15 + 40
+    assert num == expected
 
+
+def test_E_offer():
+    num = checkout("AABADEEE")
+    expected = 130 + 30 + 15 + 80
+    assert num == expected

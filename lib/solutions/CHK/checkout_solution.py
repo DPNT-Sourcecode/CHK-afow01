@@ -8,8 +8,8 @@ def checkout(skus):
     skus = Counter(list(skus))
 
     # I guess this would be a DB in the real world
-    prices = {"A": 50, "B": 30, "C": 20, "D": 15}
-    special_offers = {"A": (3, 130), "B": (2, 45)}
+    prices = {"A": 50, "B": 30, "C": 20, "D": 15, "E": 40}
+    special_offers = {"A": (3, 130), "B": (2, 45), "E": (2, 40)}
 
     total = 0
 
@@ -31,8 +31,3 @@ def checkout(skus):
             total += number * rrp
 
     return total
-
-
-
-
-
