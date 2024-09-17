@@ -1,5 +1,5 @@
-
 from collections import Counter
+
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -14,9 +14,18 @@ def checkout(skus):
     total = 0
 
     for sku, number in skus.items():
+        # no illegal characters allowed
+        if not prices.get(sku):
+            return -1
+
+        # create as a separate function
         if offer := special_offers.get(sku):
             required_for_offer, special_price = offer
-            if number >= required_for_offer:
+            while number >= required_for_offer and number > 0:
+                number -= required_for_offer
+                total += special_price
+
+        if 
 
 
 
