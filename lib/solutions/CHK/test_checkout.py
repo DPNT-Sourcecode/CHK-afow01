@@ -47,3 +47,11 @@ def test_EEEB():
     expected = 120
     assert num == expected
 
+
+def test_ABCDEABCDE():
+    import pdb;pdb.set_trace()  # fmt: skip
+    num = checkout("ABCDEABCDE")
+    expected = 280
+    assert num == expected
+
+
