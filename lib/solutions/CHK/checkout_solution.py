@@ -23,7 +23,7 @@ def checkout(skus):
         # create as a separate function
         if offer := special_offers.get(sku):
             required_for_offer, special_price = offer
-            while number >= required_for_offer and number > 0:
+            while number >= required_for_offer:
                 number -= required_for_offer
                 total += special_price
 
@@ -31,3 +31,4 @@ def checkout(skus):
             total += number * rrp
 
     return total
+

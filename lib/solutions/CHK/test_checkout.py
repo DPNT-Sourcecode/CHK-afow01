@@ -35,3 +35,10 @@ def test_E_offer():
     expected = 130 + 30 + 15 + 120
     assert num == expected
 
+
+def test_As():
+    num = checkout("AAAAAAA")
+    expected = 300
+    assert num == expected
+
+
