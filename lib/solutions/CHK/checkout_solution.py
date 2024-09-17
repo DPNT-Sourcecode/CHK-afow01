@@ -13,7 +13,7 @@ def checkout(skus):
 
     total = 0
 
-    to_deduct = ''
+    to_deduct = ""
 
     for sku, number in skus.items():
         rrp = prices.get(sku)
@@ -28,6 +28,7 @@ def checkout(skus):
                 required_for_offer, special_price = offer
                 while number >= required_for_offer:
                     number -= required_for_offer
+                    # deductions for the E offer
                     if isinstance(special_price, tuple):
                         to_remove, other_sku = special_price
                         to_deduct += to_remove * other_sku
@@ -38,7 +39,12 @@ def checkout(skus):
         if number > 0:
             total += number * rrp
 
+
+    for deductions in Counter(list(to_deduct)).items():
+        skus = 
+
     return total
+
 
 
 
