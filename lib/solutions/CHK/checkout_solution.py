@@ -14,8 +14,10 @@ def checkout(skus):
     total = 0
 
     for sku, number in skus.items():
+        rrp = prices.get(sku)
+
         # no illegal characters allowed
-        if not prices.get(sku):
+        if not rrp:
             return -1
 
         # create as a separate function
@@ -25,7 +27,10 @@ def checkout(skus):
                 number -= required_for_offer
                 total += special_price
 
-        if 
+        if number > 0:
+            total += number * rrp
+
+    return total
 
 
 
