@@ -5,7 +5,7 @@ from collections import Counter
 # skus = unicode string
 def checkout(skus):
     # presumably deliminated by commas
-    skus = Counter(skus.split(","))
+    skus = Counter(list(skus))
 
     # I guess this would be a DB in the real world
     prices = {"A": 50, "B": 30, "C": 20, "D": 15}
@@ -31,6 +31,7 @@ def checkout(skus):
             total += number * rrp
 
     return total
+
 
 
 
