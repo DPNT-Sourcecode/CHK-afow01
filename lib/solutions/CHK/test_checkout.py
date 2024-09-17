@@ -42,4 +42,11 @@ def test_As():
     assert num == expected
 
 
+def test_EEEB():
+    num = checkout("EEEB")
+    expected = 120  # 40 + 40 + 30 = 110
+    assert num == expected
+
+
+
 
