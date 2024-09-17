@@ -12,3 +12,15 @@ def test_checkout_one_offer():
     expected = 130 + 30 + 15
     assert num == expected
 
+
+def test_checkout_all_offers():
+    num = checkout("B,D,B,A,A,C,A")
+    expected = 45 + 15 + 130 + 20
+    assert num == expected
+
+
+def test_illegal():
+    num = checkout("B,B,ILLEGAL,A")
+    assert num == -1
+
+
